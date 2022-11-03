@@ -19,40 +19,42 @@ class Food {
     int timeSoupSec = 45;
     int foodTimeMinute = -1;
     int foodTimeSec = -1;
-    String food;
+    String foodType;
 
     Scanner myobj = new Scanner(System.in);
-    System.out.println("Which food do you want to heat, sub, pizza or soup?: ");
-    food = myobj.nextLine();
+    System.out.print("Which food do you want to heat, sub, pizza or soup?: ");
+    foodType = myobj.nextLine();
     System.out.print("How many " + foodType + "(s) are you cooking?(max 3): ");
-    foodNumberString = myobj.nextLine();
+    String foodNumberString = myobj.nextLine();
 
     try {
-      foodNumber = Integer.parseInt(foodNumberString);
+      int foodNumber = Integer.parseInt(foodNumberString);
       if (foodNumber > maxFood) {
-        System.out.println("The maximum quantity of food is 3.");
+        System.out.println("\nThe maximum quantity of food is 3.");
       } else if (foodNumber <= 0) {
-        System.out.println("Please enter a positive number!");
+        System.out.println("\nPlease enter a positive number!");
       } else {
-        if (food.equals("sub")) {
+        if (foodType.equals("sub")) {
           foodTimeMinute = foodNumber * timeSubMinute;
           foodTimeSec = foodNumber * timeSubSec;
-        } else if (food.equals("pizza") {
+        } else if (foodType.equals("pizza")) {
           foodTimeMinute = foodNumber * timePizzaMinute;
           foodTimeSec = foodNumber * timePizzaSec;
-        } else if (food.equals("soup") {
+        } else if (foodType.equals("soup")) {
           foodTimeMinute = foodNumber * timeSoupMinute;
           foodTimeSec = foodNumber * timeSoupSec;
-	}
+	} else {
+	  System.out.println("\nPlease choose a food in options!");
+        }
       }
       if (foodTimeMinute >= 0 && foodTimeSec >= 0) {
         System.out.println(
-          "The total cook time is " + foodTimeMinute + " minutes and "
+          "\nThe total cook time is " + foodTimeMinute + " minutes and "
 	  + foodTimeSec + " seconds."
         );
       }
     } catch (Exception e) {
-      System.out.println("Please choose a food in options!");
+      System.out.println("\nInvalid food number!");
     } finally {
       System.out.println("\nDone.");
     }
