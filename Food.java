@@ -43,14 +43,14 @@ class Food {
         } else if (foodType.equals("soup")) {
           foodTimeMinute = foodNumber * timeSoupMinute;
           foodTimeSec = foodNumber * timeSoupSec;
-	} else {
-	  System.out.println("\nPlease choose a food in options!");
+        } else {
+          System.out.println("\nPlease choose a food in options!");
         }
       }
       if (foodTimeMinute >= 0 && foodTimeSec >= 0) {
         System.out.println(
-          "\nThe total cook time is " + foodTimeMinute + " minutes and "
-	  + foodTimeSec + " seconds."
+            "\nThe total cook time is " + foodTimeMinute + " minutes and "
+            + foodTimeSec + " seconds."
         );
       }
     } catch (Exception e) {
