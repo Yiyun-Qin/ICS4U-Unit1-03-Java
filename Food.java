@@ -1,10 +1,9 @@
 import java.util.Scanner;
 /**
- * The HelloWorld program implements an application that
- * simply displays energy released question to the standard output.
+ * The program calculates the time needs to cook food.
  *
- * @author      Yiyun Qin
- * @Version 1.0
+ * @author  Yiyun Qin
+ * @Version 2.0
  * @Since   2022-09-23
  */
 
