@@ -20,6 +20,9 @@ class Food {
     int foodTimeMinute = -1;
     int foodTimeSec = -1;
     String foodType;
+    double multipleDouble;
+    int multiple;
+
 
     Scanner myobj = new Scanner(System.in);
     System.out.print("Which food do you want to heat, sub, pizza or soup?: ");
@@ -48,6 +51,12 @@ class Food {
         }
       }
       if (foodTimeMinute >= 0 && foodTimeSec >= 0) {
+        if (foodTimeSec >= 60) {
+          multipleDouble = foodTimeSec / 60;
+          multiple = (int) Math.floor(multipleDouble);
+          foodTimeMinute = foodTimeMinute + multiple;
+          foodTimeSec = foodTimeSec - multiple * 60;
+        }
         System.out.println(
             "\nThe total cook time is " + foodTimeMinute + " minutes and "
             + foodTimeSec + " seconds."
