@@ -3,21 +3,22 @@ import java.util.Scanner;
  * The program calculates the time needs to cook food.
  *
  * @author  Yiyun Qin
- * @Version 2.0
- * @Since   2022-09-23
+ * @version 2.0
+ * @since   2022-09-23
  */
 
 class Food {
   public static void main(String[] args) {
-    int maxFood = 3;
-    int timeSubMinute = 1;
-    int timeSubSec = 0;
-    int timePizzaMinute = 0;
-    int timePizzaSec = 45;
-    int timeSoupMinute = 1;
-    int timeSoupSec = 45;
+    final int maxFood = 3;
+    final int timeSubMinute = 1;
+    final int timeSubSec = 0;
+    final int timePizzaMinute = 0;
+    final int timePizzaSec = 45;
+    final int timeSoupMinute = 1;
+    final int timeSoupSec = 45;
     int foodTimeMinute = -1;
     int foodTimeSec = -1;
+    final int aMinute = 60;
     String foodType;
     double multipleDouble;
     int multiple;
@@ -50,11 +51,11 @@ class Food {
         }
       }
       if (foodTimeMinute >= 0 && foodTimeSec >= 0) {
-        if (foodTimeSec >= 60) {
-          multipleDouble = foodTimeSec / 60;
+        if (foodTimeSec >= aMinute) {
+          multipleDouble = foodTimeSec / aMinute;
           multiple = (int) Math.floor(multipleDouble);
           foodTimeMinute = foodTimeMinute + multiple;
-          foodTimeSec = foodTimeSec - multiple * 60;
+          foodTimeSec = foodTimeSec - multiple * aMinute;
         }
         System.out.println(
             "\nThe total cook time is " + foodTimeMinute + " minutes and "
